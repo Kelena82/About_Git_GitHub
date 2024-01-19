@@ -337,6 +337,15 @@ o	Ещё раз выполнили git add. Состояние: staged (+ tracke
 6.	Сделали коммит. Состояния: tracked.<br>
 7.	Повторили пункты 4−7 много-много раз.<br>
 
+```mermaid
+   graph LR
+untracked -- "git add" --> staged;
+modified -- "git add" --> staged;
+staged --> modified;
+staged -- "git commit" --> tracked;
+tracked --> modified;
+```
+
 ### Как читать git status
 Частая ошибка при использовании Git — закоммитить лишнее или, наоборот, забыть добавить важный файл в коммит. Этого легко избежать, если не забывать проверять статусы файлов с помощью команды git status.<br>
  **Какие состояния показывает git status**<br>
